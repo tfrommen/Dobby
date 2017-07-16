@@ -1,0 +1,31 @@
+{
+  "name": "tfrommen/dobby",
+  "description": "Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "admin",
+    "dobby",
+    "notices"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thorsten Frommen",
+      "email": "info@tfrommen.de",
+      "homepage": "https://twitter.com/thorstenfrommen",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/tfrommen/Dobby/issues",
+    "source": "https://github.com/tfrommen/Dobby"
+  },
+  "require": {
+    "php": ">=5.4"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
