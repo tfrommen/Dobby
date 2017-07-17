@@ -55,7 +55,7 @@ function bootstrap() {
 
 		$button = '<button class="button dobby-button">' . __( 'Toggle notices', 'dobby' ) . '</button>';
 
-		/** translators: s: <button> tagto display admin notices */
+		/** translators: s: <button> tag to display admin notices */
 		$message = __( 'Dobby took care of your admin notices. %s', 'dobby' );
 
 		printf(
