@@ -28,8 +28,8 @@ This plugin **requires PHP 5.4** or higher, but you really **should be using PHP
 
 ## Usage
 
-Dobby captured everything that gets printed on one of the admin notice hooks (i.e., `network_admin_notices`, `user_admin_notices`, `admin_notices` and `all_admin_notices`), and hides it, for now.
-In case Dobby captured anything, he will inform you (yes, via an admin notice).
+Dobby captures everything that gets printed on one of the admin notice hooks (i.e., `network_admin_notices`, `user_admin_notices`, `admin_notices` and `all_admin_notices`), and hides it, for now.
+In case Dobby did capture anything, he will inform you (yes, via an admin notice).
 
 ![Dobby in Action](assets/images/dobby.gif)
 
