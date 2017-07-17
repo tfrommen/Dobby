@@ -22,6 +22,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - 
 
+## [1.1.0] - 2017-07-17
+
+### Added
+
+- Add `\tfrommen\Dobby\FILTER_THRESHOLD` to filter the minimum number of admin notices required for Dobby to take action, see [#4](https://github.com/tfrommen/Dobby/issues/4).
+- Add ... ✨ MAGIC ✨.
+
+### Changed
+
+- Make Dobby reveal the captured admin notices once and for all instead of toggling them.
+- Make Dobby pick up the according notice level based on what admin notices he captured—error wins over warning, otherwise it is an info—see [#3](https://github.com/tfrommen/Dobby/issues/3).
+
+### Fixed
+
+- Make Dobby also capture admin notices with only the `error` or `updated` class, see [#2](https://github.com/tfrommen/Dobby/issues/2).
+
 ## [1.0.1] - 2017-07-17
 
 ### Changed
@@ -39,5 +55,6 @@ Initial release.
 
 ----
 
-[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/tfrommen/Dobby/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/tfrommen/Dobby/compare/v1.0.0...v1.0.1
