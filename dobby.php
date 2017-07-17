@@ -5,7 +5,7 @@
  * Description: Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     1.0.1
+ * Version:     1.1.0
  * Text Domain: dobby
  * License:     MIT
  */
@@ -19,8 +19,18 @@ if ( ! is_admin() ) {
 }
 
 /**
+ * Filter hook.
+ *
+ * @since 1.1.0
+ *
+ * @var string
+ */
+const FILTER_THRESHOLD = 'dobby.threshold';
+
+/**
  * Bootstraps the plugin.
  *
+ * @since 1.0.0
  * @wp-hook plugins_loaded
  *
  * @return void
@@ -48,40 +58,35 @@ function bootstrap() {
 
 		load_plugin_textdomain( 'dobby' );
 
-		$contents = preg_replace(
-			'/(\sclass=["\'][^"\']*?notice)(["\'\s])/',
-			'$1 inline$2',
-			$contents
-		);
+		$button = '<button class="button dobby-button">' . __( 'Reveal', 'dobby' ) . '</button>';
 
-		$button = '<button class="button dobby-button">' . __( 'Toggle notices', 'dobby' ) . '</button>';
-
-		/** translators: s: <button> tag to display admin notices */
-		$message = __( 'Dobby took care of your admin notices. %s', 'dobby' );
+		/* translators: 1: MAGIC, 2: <button> tag to reveal admin notices */
+		$message = __( '%1$s Dobby took care of your admin notices. %2$s', 'dobby' );
 
 		printf(
-			'<div id="dobby" class="notice notice-info"><p>%s</p></div><div class="dobby-notices hide-if-js">%s</div>',
-			sprintf( $message, $button ),
+			'<div id="dobby" class="notice hide-if-js"><p>%s</p></div><div class="dobby-closet hide-if-js">%s</div>',
+			sprintf( $message, '&#x2728;', $button ),
 			$contents
 		);
 
-		add_action( 'admin_footer', function () {
+		wp_enqueue_script(
+			'dobby',
+			plugin_dir_url( __FILE__ ) . 'assets/js/dobby.js',
+			[ 'jquery' ],
+			filemtime( plugin_dir_path( __FILE__ ) . 'assets/js/dobby.js' )
+		);
 
-			$js = <<<JS
-jQuery( function () {
-	var notices;
-	jQuery( '#wpbody-content' ).on( 'click', '.dobby-button', function () {
-		if ( ! notices ) {
-			notices = jQuery( '.dobby-notices' );
-			notices.insertAfter( '#dobby' );
-		}
-
-		notices.toggle();
-	} );
-} );
-JS;
-			echo "<script>{$js}</script>";
-		} );
+		/**
+		 * Filters the minimum number of admin notices required for Dobby to take action.
+		 *
+		 * @since 1.1.0
+		 *
+		 * @param int $threshold Required minimum number of admin notices.
+		 */
+		$threshold = (int) apply_filters( FILTER_THRESHOLD, 1 );
+		wp_localize_script( 'dobby', 'dobbySettings', [
+			'threshold' => max( 1, $threshold ),
+		] );
 	}, PHP_INT_MAX );
 }
 
