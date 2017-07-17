@@ -5,7 +5,8 @@
  * Description: Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     1.0.0
+ * Version:     1.0.1
+ * Text Domain: dobby
  * License:     MIT
  */
 
@@ -40,12 +41,12 @@ function bootstrap() {
 
 	add_action( 'all_admin_notices', function () {
 
-		load_plugin_textdomain( 'dobby' );
-
 		$contents = trim( ob_get_clean() );
 		if ( ! $contents ) {
 			return;
 		}
+
+		load_plugin_textdomain( 'dobby' );
 
 		$contents = preg_replace(
 			'/(\sclass=["\'][^"\']*?notice)(["\'\s])/',
@@ -55,7 +56,7 @@ function bootstrap() {
 
 		$button = '<button class="button dobby-button">' . __( 'Toggle notices', 'dobby' ) . '</button>';
 
-		/** translators: s: <button> tagto display admin notices */
+		/** translators: s: <button> tag to display admin notices */
 		$message = __( 'Dobby took care of your admin notices. %s', 'dobby' );
 
 		printf(
