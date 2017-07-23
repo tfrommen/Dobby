@@ -5,7 +5,7 @@
  * Description: Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     1.1.0
+ * Version:     1.1.1
  * Text Domain: dobby
  * License:     MIT
  */

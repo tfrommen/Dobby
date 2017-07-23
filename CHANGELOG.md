@@ -22,6 +22,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - 
 
+## [1.1.1] - 2017-07-23
+
+### Fixed
+
+- Only ignore images for export (e.g., the generated ZIP file), see [#5](https://github.com/tfrommen/Dobby/issues/5).
+
 ## [1.1.0] - 2017-07-17
 
 ### Added
@@ -55,6 +61,7 @@ Initial release.
 
 ----
 
-[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/tfrommen/Dobby/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/tfrommen/Dobby/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/tfrommen/Dobby/compare/v1.0.0...v1.0.1
