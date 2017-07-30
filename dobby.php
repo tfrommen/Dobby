@@ -1,12 +1,12 @@
 <?php # -*- coding: utf-8 -*-
 /*
  * Plugin Name: Dobby
- * Plugin URI:  https://github.com/tfrommen/Dobby/
+ * Plugin URI:  https://wordpress.org/plugins/wp-dobby/
  * Description: Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     1.1.1
- * Text Domain: dobby
+ * Version:     1.2.0
+ * Text Domain: wp-dobby
  * License:     MIT
  */
 
@@ -56,12 +56,12 @@ function bootstrap() {
 			return;
 		}
 
-		load_plugin_textdomain( 'dobby' );
+		load_plugin_textdomain( 'wp-dobby' );
 
-		$button = '<button class="button dobby-button">' . __( 'Reveal', 'dobby' ) . '</button>';
+		$button = '<button class="button dobby-button">' . __( 'Reveal', 'wp-dobby' ) . '</button>';
 
 		/* translators: 1: MAGIC, 2: <button> tag to reveal admin notices */
-		$message = __( '%1$s Dobby took care of your admin notices. %2$s', 'dobby' );
+		$message = __( '%1$s Dobby took care of your admin notices. %2$s', 'wp-dobby' );
 
 		printf(
 			'<div id="dobby" class="notice hide-if-js"><p>%s</p></div><div class="dobby-closet hide-if-js">%s</div>',

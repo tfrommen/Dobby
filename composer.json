@@ -18,6 +18,7 @@
   ],
   "support": {
     "issues": "https://github.com/tfrommen/Dobby/issues",
+    "forum": "https://wordpress.org/support/plugin/wp-dobby/",
     "source": "https://github.com/tfrommen/Dobby"
   },
   "require": {

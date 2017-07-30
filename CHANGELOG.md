@@ -22,6 +22,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - 
 
+## [1.2.0] - 2017-07-30
+
+WordPress.org release.
+
 ## [1.1.1] - 2017-07-23
 
 ### Fixed
@@ -61,7 +65,8 @@ Initial release.
 
 ----
 
-[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/tfrommen/Dobby/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/tfrommen/Dobby/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/tfrommen/Dobby/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/tfrommen/Dobby/compare/v1.0.0...v1.0.1
