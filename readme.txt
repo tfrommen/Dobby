@@ -3,7 +3,7 @@ Contributors: tfrommen
 Tags: admin, notices
 Requires at least: 3.1.0
 Tested up to: 4.8
-Stable tag: v1.2.0
+Stable tag: v1.2.1
 
 Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.
 
@@ -28,6 +28,9 @@ This plugin requires **PHP 5.4**.
 1. See only a single admin notice, if at all.
 
 == Changelog ==
+
+= 1.2.1 =
+* Fix output buffering priority.
 
 = 1.2.0 =
 * WordPress.org release.

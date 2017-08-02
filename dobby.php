@@ -5,7 +5,7 @@
  * Description: Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     1.2.0
+ * Version:     1.2.1
  * Text Domain: wp-dobby
  * License:     MIT
  */
@@ -47,7 +47,7 @@ function bootstrap() {
 	add_action( $action, function () {
 
 		ob_start();
-	}, PHP_INT_MAX + 1 );
+	}, (int) ( PHP_INT_MAX + 1 ) );
 
 	add_action( 'all_admin_notices', function () {
 
