@@ -4,10 +4,12 @@
 
 	const closet = $( '.dobby-closet' );
 	const dobby = $( '#dobby' );
+	const inlineClass = 'dobby-inline';
 	const notices = closet.find( 'div.error,div.notice,div.updated' );
 
 	function reveal() {
-		closet.replaceWith( closet.html() );
+		notices.filter( `.${inlineClass}` ).removeClass( `inline ${inlineClass}` );
+		closet.insertAfter( dobby ).show();
 		dobby.remove();
 	}
 
@@ -29,12 +31,9 @@
 		return;
 	}
 
-	notices.addClass( 'inline' );
+	notices.not( '.inline' ).addClass( `inline ${inlineClass}` );
 
 	dobby.addClass( getClass() ).removeClass( 'hide-if-js' );
 
-	$( '.dobby-button' ).click( function() {
-		closet.insertAfter( dobby );
-		reveal();
-	} );
+	$( '.dobby-button' ).click( reveal );
 })( jQuery );
