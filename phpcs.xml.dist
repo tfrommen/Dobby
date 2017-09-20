@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="Dobby Coding Standard">
+
+	<description>Dobby coding standard.</description>
+
+	<file>./dobby.php</file>
+
+	<arg value="sp"/>
+
+	<!-- Set textdomain. -->
+	<config name="text_domain" value="wp-dobby"/>
+
+	<!-- Check for cross-version support for PHP 7.0 and higher. -->
+	<config name="testVersion" value="5.4-"/>
+	<rule ref="PHPCompatibility"/>
+
+	<rule ref="WordPress">
+
+		<!-- Exclude to be able to include an encoding cookie. -->
+		<exclude name="Squiz.Commenting.FileComment.WrongStyle"/>
+		<exclude name="Squiz.Commenting.InlineComment.WrongStyle"/>
+
+	</rule>
+
+</ruleset>
