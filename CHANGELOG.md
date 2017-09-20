@@ -22,6 +22,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - 
 
+## [1.3.0] - 2017-09-20
+
+### Added
+
+- Add PHP_CodeSniffer.
+
+### Changed
+
+- Adapt code according to PHP_CodeSniffer ruleset.
+- Pass custom selectors to JavaScript.
+
+### Fixed
+
+- Fix dismissible notices not being able to get dismissed, see [issue #9](https://github.com/tfrommen/Dobby/issues/9).
+
 ## [1.2.1] - 2017-08-02
 
 ### Fixed
@@ -65,13 +80,14 @@ WordPress.org release.
 - Add missing `Text Domain` information in plugin header.
 - Fix typos.
 
-## [1.0.0] - 2017-07-16
+## 1.0.0 - 2017-07-16
 
 Initial release.
 
 ----
 
-[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/tfrommen/Dobby/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/tfrommen/Dobby/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/tfrommen/Dobby/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/tfrommen/Dobby/compare/v1.1.0...v1.1.1

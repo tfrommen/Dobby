@@ -3,7 +3,8 @@ Contributors: tfrommen
 Tags: admin, notices
 Requires at least: 3.1.0
 Tested up to: 4.8
-Stable tag: v1.2.1
+Stable tag: v1.3.0
+Requires PHP: 5.4
 
 Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.
 
@@ -28,6 +29,11 @@ This plugin requires **PHP 5.4**.
 1. See only a single admin notice, if at all.
 
 == Changelog ==
+
+= 1.3.0 =
+* Fix dismissible notices not being able to get dismissed, see [issue #9](https://github.com/tfrommen/Dobby/issues/9).
+* Add PHP_CodeSniffer, and adapt code.
+* Pass custom selectors to JavaScript.
 
 = 1.2.1 =
 * Fix output buffering priority.
