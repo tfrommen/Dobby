@@ -1,18 +1,19 @@
 <?php # -*- coding: utf-8 -*-
+
 /*
  * Plugin Name: Dobby
  * Plugin URI:  https://wordpress.org/plugins/wp-dobby/
  * Description: Dobby, the friendly Admin Elf, takes care of all your (unwanted) admin notices.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     1.2.1
+ * Version:     1.3.0
  * Text Domain: wp-dobby
  * License:     MIT
  */
 
 namespace tfrommen\Dobby;
 
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) || die();
 
 if ( ! is_admin() ) {
 	return;
@@ -52,23 +53,30 @@ function bootstrap() {
 	add_action( 'all_admin_notices', function () {
 
 		$contents = trim( ob_get_clean() );
-		if ( ! $contents ) {
+		if ( '' === $contents ) {
 			return;
 		}
 
 		load_plugin_textdomain( 'wp-dobby' );
 
-		$button = '<button class="button dobby-button">' . __( 'Reveal', 'wp-dobby' ) . '</button>';
+		$dobby_id = 'dobby';
 
-		/* translators: 1: MAGIC, 2: <button> tag to reveal admin notices */
-		$message = __( '%1$s Dobby took care of your admin notices. %2$s', 'wp-dobby' );
-
-		printf(
-			'<div id="dobby" class="notice hide-if-js"><p>%s</p></div><div class="dobby-closet hide-if-js">%s</div>',
-			sprintf( $message, '&#x2728;', $button ),
-			$contents
-		);
-
+		$closet_id = 'dobby-closet';
+		?>
+		<div id="<?php echo esc_attr( $dobby_id ); ?>" class="notice hide-if-js">
+			<p>
+				<span>&#x2728;</span>
+				<?php esc_html_e( 'Dobby took care of your admin notices.', 'wp-dobby' ); ?>
+				<button class="button"><?php esc_html_e( 'Reveal', 'wp-dobby' ); ?></button>
+			</p>
+		</div>
+		<div id="<?php echo esc_attr( $closet_id ); ?>" class="hide-if-js">
+			<?php
+			// @codingStandardsIgnoreLine
+			echo $contents;
+			?>
+		</div>
+		<?php
 		wp_enqueue_script(
 			'dobby',
 			plugin_dir_url( __FILE__ ) . 'assets/js/dobby.js',
@@ -85,7 +93,9 @@ function bootstrap() {
 		 */
 		$threshold = (int) apply_filters( FILTER_THRESHOLD, 1 );
 		wp_localize_script( 'dobby', 'dobbySettings', [
-			'threshold' => max( 1, $threshold ),
+			'selectorCloset' => "#{$closet_id}",
+			'selectorDobby'  => "#{$dobby_id}",
+			'threshold'      => max( 1, $threshold ),
 		] );
 	}, PHP_INT_MAX );
 }
