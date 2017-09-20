@@ -2,8 +2,8 @@
 (function( $ ) {
 	'use strict';
 
-	const closet = $( '.dobby-closet' );
-	const dobby = $( '#dobby' );
+	const closet = $( dobbySettings.selectorCloset );
+	const dobby = $( dobbySettings.selectorDobby );
 	const inlineClass = 'dobby-inline';
 	const notices = closet.find( 'div.error,div.notice,div.updated' );
 
@@ -35,5 +35,5 @@
 
 	dobby.addClass( getClass() ).removeClass( 'hide-if-js' );
 
-	$( '.dobby-button' ).click( reveal );
+	dobby.find( 'button' ).click( reveal );
 })( jQuery );
