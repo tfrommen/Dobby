@@ -10,7 +10,7 @@
 	<!-- Set textdomain. -->
 	<config name="text_domain" value="wp-dobby"/>
 
-	<!-- Check for cross-version support for PHP 7.0 and higher. -->
+	<!-- Check for cross-version support for PHP. -->
 	<config name="testVersion" value="5.4-"/>
 	<rule ref="PHPCompatibility"/>
 
