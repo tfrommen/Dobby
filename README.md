@@ -12,7 +12,7 @@
 Install with [Composer](https://getcomposer.org):
 
 ```sh
-$ composer require tfrommen/dobby
+composer require tfrommen/dobby
 ```
 
 Or:
@@ -49,7 +49,7 @@ The default value is `1`.
 ```php
 <?php
 /**
- * Filters the minimum number of admin notices required for Dobby to take action.
+ * Filter the minimum number of admin notices required for Dobby to take action.
  *
  * @param int $threshold Required minimum number of admin notices.
  */
@@ -58,9 +58,3 @@ add_filter( \tfrommen\Dobby\FILTER_THRESHOLD, function () {
 	return 3;
 } );
 ```
-
-## License
-
-Copyright (c) 2017 Thorsten Frommen
-
-This code is licensed under the [MIT License](LICENSE).

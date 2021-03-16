@@ -22,6 +22,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - 
 
+## [1.4.0] - 2021-03-16
+
+### Changed
+
+- Update development dependencies.
+- Bump "Tested up to" header, see [issue #12](https://github.com/tfrommen/Dobby/issues/12).
+
 ## [1.3.0] - 2017-09-20
 
 ### Added
@@ -86,7 +93,8 @@ Initial release.
 
 ----
 
-[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/tfrommen/Dobby/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/tfrommen/Dobby/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/tfrommen/Dobby/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/tfrommen/Dobby/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/tfrommen/Dobby/compare/v1.1.1...v1.2.0

@@ -15,11 +15,8 @@
 	<rule ref="PHPCompatibility"/>
 
 	<rule ref="WordPress">
-
-		<!-- Exclude to be able to include an encoding cookie. -->
-		<exclude name="Squiz.Commenting.FileComment.WrongStyle"/>
-		<exclude name="Squiz.Commenting.InlineComment.WrongStyle"/>
-
+		<!-- Allow short array syntax. -->
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
 	</rule>
 
 </ruleset>
